@@ -1,0 +1,29 @@
+<html>
+<title>Moafaq Online Gallery</title>
+
+<body>
+    <script src="js/sha256.js"></script>
+    <script type="text/javascript">
+        function hashPassword(p) {
+            var input = p.password.value;
+            var hash = SHA256.hash(input);
+            p.password.value = hash;
+        }
+    </script>
+    <div align="center">
+        <h1>Moafaq Online Gallery : Registration</h1>
+
+        <form action="../server/register.php" method="POST">
+            Username: <input type="text" name="username" id="username">
+            <br />
+            <br />
+            Password: <input type="password" name="password" id="password">
+            <br />
+            <br />
+            <button type="submit" onclick="hashPassword(this.form)">Submit to register</button>
+            <p>Back to <a href="login.html">login</a></p>
+        </form>
+    </div>
+</body>
+
+</html>
